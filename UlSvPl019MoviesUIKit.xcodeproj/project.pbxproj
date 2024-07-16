@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D81230B12C4566AF00788D9E /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81230B02C4566AE00788D9E /* Movie.swift */; };
 		D85C58952C441B4600506D1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C58942C441B4600506D1F /* AppDelegate.swift */; };
 		D85C58972C441B4600506D1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C58962C441B4600506D1F /* SceneDelegate.swift */; };
 		D85C589E2C441B4A00506D1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D85C589D2C441B4A00506D1F /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D81230B02C4566AE00788D9E /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		D85C58912C441B4600506D1F /* UlSvPl019MoviesUIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UlSvPl019MoviesUIKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D85C58942C441B4600506D1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D85C58962C441B4600506D1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		D85C58A92C441C2700506D1F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D81230B02C4566AE00788D9E /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			files = (
 				D85C58B32C4421A100506D1F /* Constants.swift in Sources */,
 				D85C58AE2C441C6800506D1F /* String+Extensions.swift in Sources */,
+				D81230B12C4566AF00788D9E /* Movie.swift in Sources */,
 				D85C58952C441B4600506D1F /* AppDelegate.swift in Sources */,
 				D85C58972C441B4600506D1F /* SceneDelegate.swift in Sources */,
 				D85C58B02C441DC000506D1F /* MoviesViewController.swift in Sources */,
