@@ -16,6 +16,7 @@
 		D85C58B02C441DC000506D1F /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C58AF2C441DC000506D1F /* MoviesViewController.swift */; };
 		D85C58B32C4421A100506D1F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85C58B22C4421A100506D1F /* Constants.swift */; };
 		D8AC010A2C46C1E500164807 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AC01092C46C1E500164807 /* HTTPClient.swift */; };
+		D8AC010C2C46CB3900164807 /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8AC010B2C46CB3900164807 /* MovieListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D85C58AF2C441DC000506D1F /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		D85C58B22C4421A100506D1F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D8AC01092C46C1E500164807 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		D8AC010B2C46CB3900164807 /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		D85C58AB2C441C3900506D1F /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				D8AC010B2C46CB3900164807 /* MovieListViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -197,6 +200,7 @@
 				D85C58B32C4421A100506D1F /* Constants.swift in Sources */,
 				D85C58AE2C441C6800506D1F /* String+Extensions.swift in Sources */,
 				D81230B12C4566AF00788D9E /* Movie.swift in Sources */,
+				D8AC010C2C46CB3900164807 /* MovieListViewModel.swift in Sources */,
 				D8AC010A2C46C1E500164807 /* HTTPClient.swift in Sources */,
 				D85C58952C441B4600506D1F /* AppDelegate.swift in Sources */,
 				D85C58972C441B4600506D1F /* SceneDelegate.swift in Sources */,
