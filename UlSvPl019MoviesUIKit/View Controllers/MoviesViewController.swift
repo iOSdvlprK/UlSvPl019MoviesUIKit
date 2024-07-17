@@ -9,6 +9,18 @@ import SwiftUI
 import Combine
 
 class MoviesViewController: UIViewController {
+    private let viewModel: MovieListViewModel
+    private var cancellables: Set<AnyCancellable> = []
+    
+    init(viewModel: MovieListViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.translatesAutoresizingMaskIntoConstraints = false
@@ -29,6 +41,16 @@ class MoviesViewController: UIViewController {
         super.viewDidLoad()
         
         setupUI()
+        
+        viewModel.$loadingCompleted
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] completed in
+                if completed {
+                    // reload the tableview
+                    self?.moviesTableView.reloadData()
+                }
+            }
+            .store(in: &cancellables)
     }
         
     private func setupUI() {
@@ -70,7 +92,11 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension MoviesViewController: UISearchBarDelegate {}
+extension MoviesViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+    }
+}
 
 struct MoviesViewControllerRepresentable: UIViewControllerRepresentable {
 //    typealias UIViewControllerType = MoviesViewController
@@ -79,7 +105,7 @@ struct MoviesViewControllerRepresentable: UIViewControllerRepresentable {
     }
     
     func makeUIViewController(context: Context) -> MoviesViewController {
-        MoviesViewController()
+        MoviesViewController(viewModel: MovieListViewModel(httpClient: HTTPClient()))
     }
 }
 
