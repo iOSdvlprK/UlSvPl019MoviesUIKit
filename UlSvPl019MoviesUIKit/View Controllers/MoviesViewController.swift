@@ -80,13 +80,14 @@ class MoviesViewController: UIViewController {
 
 extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        viewModel.movies.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieTableViewCell", for: indexPath)
         var content = cell.defaultContentConfiguration()
-        content.text = "Hello World"
+        let movie = viewModel.movies[indexPath.row]
+        content.text = movie.title
         cell.contentConfiguration = content
         return cell
     }
@@ -94,7 +95,7 @@ extension MoviesViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension MoviesViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
+        viewModel.setSearchText(searchText)
     }
 }
 

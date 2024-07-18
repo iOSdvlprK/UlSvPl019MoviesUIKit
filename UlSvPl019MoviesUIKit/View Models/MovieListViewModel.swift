@@ -13,10 +13,26 @@ class MovieListViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
     @Published var loadingCompleted: Bool = false
     
+    private var searchSubject = CurrentValueSubject<String, Never>("")
+    
     private let httpClient: HTTPClient
     
     init(httpClient: HTTPClient) {
         self.httpClient = httpClient
+        setupSearchPublisher()
+    }
+    
+    private func setupSearchPublisher() {
+        searchSubject
+            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.main)
+            .sink { [weak self] searchText in
+                self?.loadMovies(search: searchText)
+            }
+            .store(in: &cancellables)
+    }
+    
+    func setSearchText(_ searchText: String) {
+        searchSubject.send(searchText)
     }
     
     func loadMovies(search: String) {
